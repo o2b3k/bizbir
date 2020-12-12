@@ -6,85 +6,97 @@ String apiResponseToJson(JobModel data) => json.encode(data.toJson());
 
 class JobModel {
   final int id;
-  final String jobName;
-  final String companyImage;
   final String companyName;
-  final String region;
+  final String jobName;
+  final String experience;
+  final String employmentType;
+  final String workType;
+  final String workingHours;
+  final String language;
+  final String address;
   final String suitability;
   final String salary;
+  final int countJobs;
+  final String endDate;
+  final String requirements;
   final String responsibility;
-  final String workingHours;
-  final String employmentType;
-  final String quality;
-  final String additionalRequests;
-  final String description;
-  final String education;
-  final String contactPerson;
-  final String contactPhone;
-  final String contactEmail;
+  final String conditions;
+  final String aboutCompany;
+  final String email;
+  final String phone;
+  final String companyImage;
   final String createdAt;
 
   JobModel(
       {this.id,
-      this.jobName,
-      this.companyImage,
       this.companyName,
-      this.region,
+      this.jobName,
+      this.experience,
+      this.employmentType,
+      this.workType,
+      this.workingHours,
+      this.language,
+      this.address,
       this.suitability,
       this.salary,
+      this.countJobs,
+      this.endDate,
+      this.requirements,
       this.responsibility,
-      this.workingHours,
-      this.employmentType,
-      this.quality,
-      this.additionalRequests,
-      this.description,
-      this.education,
-      this.contactPerson,
-      this.contactPhone,
-      this.contactEmail,
+      this.conditions,
+      this.aboutCompany,
+      this.email,
+      this.phone,
+      this.companyImage,
       this.createdAt});
 
   factory JobModel.fromJson(Map<String, dynamic> json) {
     return JobModel(
       id: json["id"] as int,
-      jobName: json["job_name"] as String,
-      companyImage: json["company_image"] as String,
       companyName: json["company_name"] as String,
-      region: json["region"] as String,
+      jobName: json["job_name"] as String,
+      experience: json["experience"] as String,
+      employmentType: json["employment_type"] as String,
+      workType: json["work_type"] as String,
+      workingHours: json["working_hours"] as String,
+      language: json["language"] as String,
+      address: json["address"] as String,
       suitability: json["suitability"] as String,
       salary: json["salary"] as String,
+      countJobs: json["count_jobs"] as int,
+      endDate: json["end_date"] as String,
+      requirements: json["requirements"] as String,
       responsibility: json["responsibility"] as String,
-      workingHours: json["working_hours"] as String,
-      employmentType: json["employment_type"] as String,
-      quality: json["qualities"] as String,
-      additionalRequests: json["additional_requests"] as String,
-      description: json["description"] as String,
-      education: json["education"] as String,
-      contactPerson: json["contact_person"] as String,
-      contactPhone: json["contact_phone"] as String,
-      contactEmail: json["contact_email"] as String,
+      conditions: json["conditions"] as String,
+      aboutCompany: json["about_company"] as String,
+      email: json["email"] as String,
+      phone: json["phone"] as String,
+      companyImage: json["company_image"] as String,
       createdAt: json["created_at"] as String,
     );
   }
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "job_name": jobName,
-        "company_image": companyImage,
         "company_name": companyName,
-        "region": region,
+        "job_name": jobName,
+        "experience": experience,
+        "employment_type": employmentType,
+        "work_type": workType,
+        "working_hours": workingHours,
+        "language": language,
+        "address": address,
         "suitability": suitability,
         "salary": salary,
+        "count_jobs": countJobs,
+        "end_date": endDate,
+        "requirements": requirements,
         "responsibility": responsibility,
-        "working_hours": workingHours,
-        "employment_type": employmentType,
-        "qualities": quality,
-        "additional_requests": additionalRequests,
-        "description": description,
-        "education": education,
-        "contact_person": contactPerson,
-        "contact_phone": contactPhone,
-        "contact_email": contactEmail,
+        "conditions": conditions,
+        "about_company": aboutCompany,
+        "email": email,
+        "phone": phone,
+        "company_image": companyImage,
         "created_at": createdAt
       };
 }

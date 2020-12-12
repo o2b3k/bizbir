@@ -43,17 +43,17 @@ class _HomeWidgetState extends State<HomeWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
+            icon: Icon(Icons.work),
+            label: 'Вакансии',
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_box_outlined),
-            label: 'Каталог',
+            label: 'Резюме',
             backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.portrait),
+            icon: Icon(Icons.input),
             label: 'Профиль',
             backgroundColor: Colors.black,
           ),

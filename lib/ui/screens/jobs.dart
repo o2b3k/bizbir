@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:bizbir/ui/screens/login.dart';
 import 'package:bizbir/ui/screens/screens.dart';
 import 'package:bizbir/ui/widgets/widgets.dart';
 import 'package:provider/provider.dart';
@@ -49,7 +48,7 @@ class JobScreen extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Positioned(
-          top: 0,
+          top: 20,
           right: 0,
           left: 0,
           bottom: 0,
@@ -59,29 +58,6 @@ class JobScreen extends StatelessWidget {
               children: <Widget>[
                 SizedBox(
                   height: 7.0,
-                ),
-                Row(
-                  children: <Widget>[
-                    MyDropDownButton(),
-                    Spacer(),
-                    IconButton(
-                      icon: Icon(
-                        Icons.login,
-                        color: Colors.black87,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginScreen()),
-                        );
-                      },
-                    ),
-                    // CircleAvatar(
-                    //   backgroundImage: NetworkImage(
-                    //       "https://cdn.pixabay.com/photo/2017/06/09/07/37/notebook-2386034_960_720.jpg"),
-                    // )
-                  ],
                 ),
                 SizedBox(
                   height: 15,
@@ -128,11 +104,13 @@ class JobScreen extends StatelessWidget {
                     itemCount: jobs.length,
                     itemBuilder: (ctx, i) {
                       return JobContainer(
-                        description: jobs[i].description,
+                        description: jobs[i].suitability,
                         iconUrl: IMAGE_HOST + jobs[i].companyImage,
-                        location: jobs[i].region,
+                        location: jobs[i].address,
                         salary: jobs[i].salary,
                         title: jobs[i].jobName,
+                        companyName: jobs[i].companyName,
+                        data: jobs[i].createdAt,
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
