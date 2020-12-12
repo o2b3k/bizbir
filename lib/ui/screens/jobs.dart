@@ -104,13 +104,13 @@ class JobScreen extends StatelessWidget {
                     itemCount: jobs.length,
                     itemBuilder: (ctx, i) {
                       return JobContainer(
-                        description: jobs[i].suitability,
-                        iconUrl: IMAGE_HOST + jobs[i].companyImage,
-                        location: jobs[i].address,
-                        salary: jobs[i].salary,
-                        title: jobs[i].jobName,
-                        companyName: jobs[i].companyName,
-                        data: jobs[i].createdAt,
+                        jobName: jobs[i].jobName,
+                        company: jobs[i].companyName,
+                        address: jobs[i].address,
+                        suitability: jobs[i].suitability != null
+                            ? jobs[i].suitability.join(', \n')
+                            : null,
+                        endDate: jobs[i].endDate,
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(

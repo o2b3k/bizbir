@@ -1,3 +1,4 @@
+import 'package:bizbir/ui/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bizbir/ui/screens/jobs.dart';
 import 'package:bizbir/ui/screens/screens.dart';
@@ -20,8 +21,6 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> {
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final List<Widget> _widgetOptions = [
     JobPage(),
     Employee(),

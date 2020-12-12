@@ -12,9 +12,9 @@ class JobModel {
   final String employmentType;
   final String workType;
   final String workingHours;
-  final String language;
+  final dynamic language;
   final String address;
-  final String suitability;
+  final dynamic suitability;
   final String salary;
   final int countJobs;
   final String endDate;
@@ -59,9 +59,9 @@ class JobModel {
       employmentType: json["employment_type"] as String,
       workType: json["work_type"] as String,
       workingHours: json["working_hours"] as String,
-      language: json["language"] as String,
+      language: json["language"] as dynamic,
       address: json["address"] as String,
-      suitability: json["suitability"] as String,
+      suitability: json["suitability"] as dynamic,
       salary: json["salary"] as String,
       countJobs: json["count_jobs"] as int,
       endDate: json["end_date"] as String,

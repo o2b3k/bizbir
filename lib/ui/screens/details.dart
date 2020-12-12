@@ -1,5 +1,7 @@
-import 'package:bizbir/models/job.dart';
 import 'package:flutter/material.dart';
+import 'package:bizbir/models/job.dart';
+import 'package:bizbir/ui/layouts/experience.dart';
+import 'package:bizbir/ui/layouts/job_item.dart';
 
 class DetailsScreen extends StatelessWidget {
   final JobModel job;
@@ -11,6 +13,7 @@ class DetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("${job.jobName}"),
       ),
+      backgroundColor: Color(0xfff0f0f6),
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -20,122 +23,100 @@ class DetailsScreen extends StatelessWidget {
             // top: 0,
             height: MediaQuery.of(context).size.height / 1,
             child: Container(
+              margin: EdgeInsets.only(top: 80),
               padding: const EdgeInsets.all(15.0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Center(
-                      child: Text("${job.companyName}"),
+                      child: Text(
+                        "${job.companyName}",
+                        style: TextStyle(color: Colors.blue, fontSize: 20),
+                      ),
                     ),
-                    Text(
-                      "${job.jobName}",
-                      style: Theme.of(context).textTheme.headline,
+                    Center(
+                      child: Text(
+                        "${job.jobName}",
+                        style: Theme.of(context).textTheme.headline6,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.address}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text(
-                      "Обязанности",
-                      style: Theme.of(context).textTheme.subhead,
-                    ),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.requirements}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                      maxLines: 3,
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text(
-                      "Требования",
-                      style: Theme.of(context).textTheme.subhead,
-                    ),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.experience}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text("Образование",
-                        style: Theme.of(context).textTheme.subhead),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.aboutCompany}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text("Заработок",
-                        style: Theme.of(context).textTheme.subhead),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.salary}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text("Контактное лицо",
-                        style: Theme.of(context).textTheme.subhead),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.companyName}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text("Контактный телефон",
-                        style: Theme.of(context).textTheme.subhead),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.phone}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text("Адрес электронной почты",
-                        style: Theme.of(context).textTheme.subhead),
-                    Divider(color: Colors.black),
-                    Text(
-                      "${job.email}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .body2
-                          .apply(color: Colors.grey),
-                    ),
+                    Divider(),
+                    if (job.experience != null)
+                      Experience(
+                        title: "Опыт работы",
+                        description: job.experience,
+                        icon: Icons.work,
+                      ),
+                    if (job.workType != null)
+                      Experience(
+                        title: "Тип работы",
+                        description: job.workType,
+                        icon: Icons.alarm,
+                      ),
+                    if (job.language != null)
+                      Experience(
+                        title: "Язык",
+                        description: job.language.join(', '),
+                        icon: Icons.language,
+                      ),
+                    if (job.address != null)
+                      Experience(
+                        title: "Адрес",
+                        description: job.address,
+                        icon: Icons.map,
+                      ),
+                    if (job.suitability != null)
+                      JobItem(
+                        title: "Приспособленность рабочего места",
+                        description: job.suitability.join(', \n'),
+                      ),
+                    if (job.requirements != null)
+                      JobItem(
+                        title: "Требования",
+                        description: job.requirements,
+                      ),
+                    if (job.responsibility != null)
+                      JobItem(
+                        title: "Обязанности",
+                        description: job.responsibility,
+                      ),
+                    if (job.conditions != null)
+                      JobItem(
+                        title: "Условия",
+                        description: job.conditions,
+                      ),
+                    if (job.salary != null)
+                      JobItem(
+                        title: "Заработная плата",
+                        description: job.salary,
+                      ),
+                    if (job.aboutCompany != null)
+                      JobItem(
+                        title: "О компании",
+                        description: job.aboutCompany,
+                      ),
+                    if (job.email != null)
+                      JobItem(
+                        title: "Email",
+                        description: job.email,
+                      ),
+                    if (job.phone != null)
+                      JobItem(
+                        title: "Телефон",
+                        description: job.phone,
+                      ),
+                    if (job.countJobs != null)
+                      JobItem(
+                        title: "Количество вакансии",
+                        description: job.countJobs.toString(),
+                      ),
+                    if (job.endDate != null)
+                      JobItem(
+                        title: "Крайний срок подачи",
+                        description: job.endDate,
+                      ),
                     SizedBox(
                       height: 15.0,
                     ),

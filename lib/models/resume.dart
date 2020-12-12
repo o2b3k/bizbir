@@ -18,7 +18,7 @@ class ResumeModel {
   final String dateCourse;
   final String courseAddress;
   final String nativeLang;
-  final String otherLang;
+  final dynamic otherLang;
   final String position;
   final String organization;
   final String jobName;
@@ -105,7 +105,7 @@ class ResumeModel {
         dateCourse: json["date_course"] as String,
         courseAddress: json["course_address"] as String,
         nativeLang: json["native_lang"] as String,
-        otherLang: json["other_lang"] as String,
+        otherLang: json["other_lang"] as dynamic,
         position: json["position"] as String,
         organization: json["organization"] as String,
         jobName: json["job_name"] as String,

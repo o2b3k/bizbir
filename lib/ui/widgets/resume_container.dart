@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class JobContainer extends StatelessWidget {
-  const JobContainer({
+class ResumeContainer extends StatelessWidget {
+  const ResumeContainer({
     Key key,
-    @required this.jobName,
-    @required this.company,
+    @required this.name,
     @required this.address,
+    @required this.skills,
     @required this.suitability,
-    @required this.endDate,
+    @required this.careerObjective,
     @required this.onTap,
   }) : super(key: key);
-  final String jobName, company, address, suitability, endDate;
+  final String name, address, skills, suitability, careerObjective;
   final Function onTap;
   @override
   Widget build(BuildContext context) {
@@ -37,34 +37,36 @@ class JobContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        "$jobName",
+                        "$name",
                         style: Theme.of(context)
                             .textTheme
                             .title
                             .apply(color: Colors.blue),
                       ),
-                      Text(
-                        "$company",
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      Text(
-                        "$address",
-                        style: Theme.of(context).textTheme.subtitle.apply(
-                              color: Colors.grey,
-                            ),
-                      ),
+                      if (skills != null)
+                        Text(
+                          "$skills",
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                       if (suitability != null)
                         Text(
                           "$suitability",
                           style: Theme.of(context).textTheme.subtitle.apply(
-                                color: Colors.blueGrey,
+                                color: Colors.grey,
                               ),
                         ),
-                      if (endDate != null)
+                      if (careerObjective != null)
                         Text(
-                          "Крайний срок подачи: $endDate",
+                          "$careerObjective",
                           style: Theme.of(context).textTheme.subtitle.apply(
                                 color: Colors.redAccent,
+                              ),
+                        ),
+                      if (suitability != null)
+                        Text(
+                          "$address",
+                          style: Theme.of(context).textTheme.subtitle.apply(
+                                color: Colors.blueGrey,
                               ),
                         ),
                     ],
