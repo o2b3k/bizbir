@@ -18,12 +18,12 @@ class JobTypes {
 
 class _MyBottomSheetState extends State<MyBottomSheet> {
   List<JobTypes> jobTypes = [
-    JobTypes(title: "Full-Time", checked: false, count: 135),
-    JobTypes(title: "Part-Time", checked: false, count: 235),
-    JobTypes(title: "Contract", checked: false, count: 39),
-    JobTypes(title: "Internship", checked: false, count: 59),
-    JobTypes(title: "Temporary", checked: false, count: 21),
-    JobTypes(title: "Commission", checked: false, count: 3),
+    JobTypes(title: "Стажировка", checked: false, count: 135),
+    JobTypes(title: "Временная", checked: false, count: 235),
+    JobTypes(title: "Удаленная", checked: false, count: 39),
+    JobTypes(title: "В офисе", checked: false, count: 59),
+    JobTypes(title: "Выездная", checked: false, count: 21),
+    JobTypes(title: "Вахтовая", checked: false, count: 3),
   ];
   RangeValues _rangeValues = RangeValues(0, 300000);
   @override
@@ -40,7 +40,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
       child: Column(
         children: <Widget>[
           Text(
-            "Salary Estimate",
+            "Заработная плата",
             style: Theme.of(context).textTheme.title,
           ),
           RangeSlider(
@@ -56,7 +56,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                 _rangeValues.start.toString(), _rangeValues.end.toString()),
           ),
           Text(
-            "Job Type",
+            "Тип работы",
             style: Theme.of(context).textTheme.title,
           ),
           GridView.count(
@@ -83,7 +83,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
             ),
           ),
           Text(
-            "Experience Level",
+            "Опыт работы",
             style: Theme.of(context).textTheme.title,
           ),
           ExperienceLevelWidget(),
@@ -94,7 +94,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
             child: RaisedButton(
               color: Colors.blue,
               child: Text(
-                "Submit",
+                "Поиск",
                 style: Theme.of(context)
                     .textTheme
                     .button

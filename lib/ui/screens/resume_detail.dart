@@ -72,30 +72,145 @@ class ResumeDetailScreen extends StatelessWidget {
                         description: resume.address,
                         icon: Icons.map,
                       ),
+                    if (resume.email != null)
+                      Experience(
+                        title: "Email",
+                        description: resume.email,
+                        icon: Icons.email,
+                      ),
+                    if (resume.phone != null)
+                      Experience(
+                        title: "Телефон",
+                        description: resume.phone,
+                        icon: Icons.phone,
+                      ),
+                    if (resume.educationLevel != null)
+                      JobItem(
+                        title: "Уровень образования",
+                        description: resume.educationLevel,
+                      ),
+                    if (resume.institut != null)
+                      JobItem(
+                        title: "Учебное заведение",
+                        description: resume.institut,
+                      ),
+                    if (resume.faculty != null)
+                      JobItem(
+                        title: "Факультет",
+                        description: resume.faculty,
+                      ),
+                    if (resume.specialty != null)
+                      JobItem(
+                        title: "Специальность",
+                        description: resume.specialty,
+                      ),
+                    if (resume.yearOfEnding != null)
+                      JobItem(
+                        title: "Год окончания",
+                        description: resume.yearOfEnding,
+                      ),
+                    if (resume.nameOfCourse != null)
+                      JobItem(
+                        title: "Название курса/тренинга",
+                        description: resume.nameOfCourse,
+                      ),
+                    if (resume.organizationCourse != null)
+                      JobItem(
+                        title: "Организатор курса/тренинга",
+                        description: resume.organizationCourse,
+                      ),
+                    if (resume.dateCourse != null)
+                      JobItem(
+                        title: "Дата прохождения",
+                        description: resume.dateCourse,
+                      ),
+                    if (resume.position != null)
+                      JobItem(
+                        title: "Должность",
+                        description: resume.position,
+                      ),
+                    if (resume.organization != null)
+                      JobItem(
+                          title: "Организация",
+                          description: resume.organization),
+                    if (resume.jobName != null)
+                      JobItem(
+                        title: "Сфера деятельности",
+                        description: resume.jobName,
+                      ),
+                    if (resume.jobAddress != null)
+                      JobItem(
+                        title: "Город",
+                        description: resume.jobAddress,
+                      ),
+                    if (resume.jobSite != null)
+                      JobItem(
+                        title: "Сайт организации",
+                        description: resume.jobSite,
+                      ),
+                    if (resume.jobStartDate != null)
+                      JobItem(
+                        title: "Начало работы",
+                        description: resume.jobStartDate,
+                      ),
+                    if (resume.jobEndDate != null)
+                      JobItem(
+                        title: "Окончание работы",
+                        description: resume.jobEndDate,
+                      ),
+                    if (resume.achievements != null)
+                      JobItem(
+                        title: "Достижения, обязанности",
+                        description: resume.achievements,
+                      ),
+                    if (resume.desiredSalary != null)
+                      JobItem(
+                        title: "Желаемая зарплата",
+                        description: resume.desiredSalary,
+                      ),
+                    if (resume.job != null)
+                      JobItem(
+                          title: "Сфера деятельности", description: resume.job),
+                    if (resume.about != null)
+                      JobItem(
+                        title: "Обо мне ( личная информация)",
+                        description: resume.about,
+                      ),
+                    if (resume.skills != null)
+                      JobItem(
+                        title: "Навыки",
+                        description: resume.skills,
+                      ),
+                    if (resume.suitability != null)
+                      JobItem(
+                        title: "Категория трудоспособности",
+                        description: resume.abilityCategory,
+                      ),
+                    if (resume.suitability != null)
+                      JobItem(
+                        title: "Приспособленность к рабочему месту",
+                        description: resume.suitability,
+                      ),
+                    if (resume.employmentType != null)
+                      JobItem(
+                        title: "Тип занятости",
+                        description: resume.employmentType,
+                      ),
+                    if (resume.typeJob != null)
+                      JobItem(title: "Тип работы", description: resume.typeJob),
+                    if (resume.driverLicense != null)
+                      JobItem(
+                        title: "Категория прав",
+                        description: resume.driverLicense,
+                      ),
+                    if (resume.careerObjective != null)
+                      JobItem(
+                        title: "Желаемая должность",
+                        description: resume.careerObjective,
+                      ),
                     SizedBox(
                       height: 15.0,
                     ),
-                    Center(
-                      child: IconButton(
-                        icon: Icon(Icons.play_arrow, color: Colors.blue),
-                        onPressed: () {},
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.height * .7,
-                      height: 45,
-                      child: RaisedButton(
-                        child: Text(
-                          "Откликнуться",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .apply(color: Colors.white),
-                        ),
-                        color: Colors.blue,
-                        onPressed: () {},
-                      ),
-                    )
                   ],
                 ),
               ),

@@ -26,7 +26,7 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               });
             },
             child: Text(
-              "Entry Level",
+              "Без опыта",
               style: _active == 0
                   ? Theme.of(context)
                       .textTheme
@@ -45,7 +45,7 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               });
             },
             child: Text(
-              "Mid Level",
+              "1 год опыта",
               style: _active == 1
                   ? Theme.of(context)
                       .textTheme
@@ -64,7 +64,7 @@ class _ExperienceLevelWidgetState extends State<ExperienceLevelWidget> {
               });
             },
             child: Text(
-              "Senior Level",
+              "2-5 лет опыта",
               style: _active == 2
                   ? Theme.of(context)
                       .textTheme
